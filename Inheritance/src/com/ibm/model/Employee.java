@@ -3,10 +3,6 @@ package com.ibm.model;
 import java.util.Random;
 
 public class Employee {
-	
-	
-	
-	
 
 	private int employeeId;
 	private String firstName;
@@ -20,7 +16,7 @@ public class Employee {
 
 	public Employee(String firstName, String lastName, String email, double salary) {
 		super();
-		this.employeeId=new Random().nextInt();
+		this.employeeId = new Random().nextInt();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -71,9 +67,5 @@ public class Employee {
 	public String getDetails() {
 		return "ID: " + employeeId + " First Name: " + firstName + " Last Name: " + lastName + " Email: " + email;
 	}
-
-	
-	
-	
 
 }

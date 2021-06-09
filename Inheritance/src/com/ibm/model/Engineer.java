@@ -1,25 +1,24 @@
 package com.ibm.model;
 
-public class Engineer extends Employee
-{
+public class Engineer extends Employee {
 
 	private String stream;
 
 	public Engineer() {
 		super();
-		
+
 	}
 
-	public Engineer(String firstName, String lastName, String email, double salary,String stream) {
+	public Engineer(String firstName, String lastName, String email, double salary, String stream) {
 		super(firstName, lastName, email, salary);
-		this.stream=stream;
-		
+		this.stream = stream;
+
 	}
 
 	@Override
 	public String getDetails() {
 		// TODO Auto-generated method stub
-		return super.getDetails()+ " Stream: "+stream;
+		return super.getDetails() + " Stream: " + stream;
 	}
 
 	public String getStream() {
@@ -29,5 +28,5 @@ public class Engineer extends Employee
 	public void setStream(String stream) {
 		this.stream = stream;
 	}
-	
+
 }
