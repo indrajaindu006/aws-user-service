@@ -2,10 +2,7 @@ package com.ibm;
 
 public class App {
 
-	private char[] ch;
-	{
-		ch = new char[26];
-	}
+	private char[] ch = new char[26];
 
 	public char[] createArray() {
 		for (int i = 0; i < ch.length; i++) {
@@ -14,7 +11,6 @@ public class App {
 		return ch;
 
 	}
-	
 
 	public static void main(String args[]) {
 		char[] c = new App().createArray();
@@ -22,7 +18,7 @@ public class App {
 		for (char ch : c) {
 			System.out.print(ch);
 		}
-		
+
 		System.out.println();
 		System.out.println("****************************");
 		// using for loop
