@@ -15,7 +15,7 @@ public class App {
 		stack.createStack(len);
 
 		do {
-			System.out.println("1.Push\n2.Pop\n3.Exit");
+			System.out.println("1.Push\n2.Pop\n3.Display Elements\n4.Search element\n5.Sort assending order\n6.Exit");
 			System.out.println("Enter the choice");
 			choice = sc.nextInt();
 
@@ -29,8 +29,27 @@ public class App {
 			case 2:
 				stack.pop();
 				break;
+
 			case 3:
-				System.out.println("Exitr");
+				int[] a = stack.display();
+				for (int i = 0; i < a.length; i++) {
+					System.out.print(a[i]+"\t");
+
+				}
+				break;
+			case 4:
+				System.out.println("Enter element to found");
+				int item = sc.nextInt();
+				stack.searchElement(item);
+				break;
+
+			case 5:
+				int[] b = stack.sortStack();
+				for (int i : b) {
+					System.out.print(i + "\t");
+				}
+			case 6:
+				System.out.println("Exit");
 				System.exit(0);
 
 			default:
