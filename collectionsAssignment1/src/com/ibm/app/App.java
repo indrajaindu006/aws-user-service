@@ -1,8 +1,10 @@
 package com.ibm.app;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -10,6 +12,7 @@ import java.util.UUID;
 
 import com.ibm.AgeComparator;
 import com.ibm.Employee;
+import com.ibm.EmployeeBO;
 import com.ibm.SortByAge;
 
 public class App {
@@ -17,8 +20,7 @@ public class App {
 
 	public static void main(String[] args) throws Exception {
 		int emp_id = 1;
-		AgeComparator ageComparator = new AgeComparator();
-		Set<Employee> set = new TreeSet<Employee>(ageComparator);
+		List<Employee> list = new ArrayList<Employee>();
 
 		boolean choice;
 		do {
@@ -29,21 +31,19 @@ public class App {
 			System.out.println("Enter department");
 			emp.setDepartment(sc.next());
 			System.out.println("Enter DOJ(dd-mm-yyyy)");
-			String Sdate = sc.next();
-			Date date1 = new SimpleDateFormat("dd-MM-yyyy").parse(Sdate);
-			emp.setDateOfJoining(date1);
+
+			Date dateOfJoining = new SimpleDateFormat("MM/dd/yyyy").parse(sc.nextLine());
+
+			emp.setDateOfJoining(dateOfJoining);
 			System.out.println("Enter salary");
 			emp.setSalary(sc.nextInt());
 			System.out.println("Enter age");
 			emp.setAge(sc.nextInt());
-			set.add(emp);
+			list.add(emp);
 			System.out.println("Add employee details(true/false)");
 			choice = sc.nextBoolean();
 			emp_id++;
 		} while (choice);
-//		for (Employee employee : set) {
-//			System.out.println(employee);
-//		}
 
 		int choice1;
 
@@ -52,25 +52,19 @@ public class App {
 			choice1 = sc.nextInt();
 
 			switch (choice1) {
+			case 1:
+
+				Collections.sort(list);
+				EmployeeBO.printEmployees(list);
+				break;
 
 			case 2:
-				System.out.println("Sort by salary");
-				SortByAge sortByAge = new SortByAge();
-				Set<Employee> set1 = new TreeSet<Employee>(sortByAge);
-				set1.addAll(set);
 
-				for (Employee employee : set1) {
-					System.out.println(employee);
-				}
+				Collections.sort(list, new AgeComparator());
+				EmployeeBO.printEmployees(list);
 
 				break;
-			case 1:
-				System.out.println("Sort by age ");
-				for (Employee employee : set) {
-					System.out.println(employee);
-				}
-				
-				break;
+
 			}
 		} while (choice1 != 0);
 

@@ -1,5 +1,6 @@
 package com.ibm;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Employee {
@@ -74,7 +75,17 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return String.format("%-15s %-30s %-30s %-10s %-10s %-10s\n", id, name, department, dateOfJoining.toString(), age, salary);
+		System.out.format("%-15s %-30s %-30s %-20s %-10s %-10s\n",id,name,department,new SimpleDateFormat("MM/dd/yyyy").format(dateOfJoining),age,salary);
+		return "";
+	}
+
+	public int compareTo(Employee e) {
+		if (salary == e.salary)
+			return 0;
+		else if (salary > e.salary)
+			return 1;
+		else
+			return -1;
 	}
 
 }
