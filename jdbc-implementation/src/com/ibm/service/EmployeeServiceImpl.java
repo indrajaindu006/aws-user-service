@@ -16,13 +16,31 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee createEmployee(Employee employee) {
-		return null;
+	public Employee createEmployee(Employee employee) throws SQLException {
+		return employeeDao.createEmployee(employee);
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() throws SQLException {
 		return employeeDao.getAllEmployees();
 	}
+
+	@Override
+	public List<Employee> findEmployeeId(int id) throws SQLException {
+		
+		return employeeDao.findEmployeeId(id);
+	}
+
+	@Override
+	public Employee updateEmployee(int empId) throws SQLException {
+		return employeeDao.updateEmployee(empId);
+	}
+
+	@Override
+	public Employee deleteEmployee(int empId) throws SQLException {
+		return employeeDao.deleteEmployee(empId);
+	}
+	
+	
 
 }
