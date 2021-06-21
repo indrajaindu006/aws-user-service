@@ -1,0 +1,4 @@
+Indu,Yeluri,indu@gmail.com,9.5
+phani,gorrep,phani@gmail.com,9.8
+Rachel,reach,sachin@gmail.com,7.7
+joey,Dravid,joey@email.com,8.9
