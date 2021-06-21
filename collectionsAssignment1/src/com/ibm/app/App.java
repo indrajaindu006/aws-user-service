@@ -54,7 +54,7 @@ public class App {
 			switch (choice1) {
 			case 1:
 
-				Collections.sort(list);
+				//Collections.sort(list);
 				EmployeeBO.printEmployees(list);
 				break;
 
