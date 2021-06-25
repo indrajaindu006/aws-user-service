@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- <bean name="theCoach" class="org.example.app.model.SwimmingCoach"/>
+<bean name="theCD" class="org.example.app.cdModel.InternationalCD">
+  <constructor-arg index="0" value="100"/>
+<constructor-arg index="1" value="Titanic"/>
+<constructor-arg index="2" value="French"/> 
+</bean>
+<bean name="theCD1" class="org.example.app.cdModel.SpecialEditionCD">
+<constructor-arg index="0" value="100"/>
+<constructor-arg index="1" value="Mac"/>
+<constructor-arg index="2" value="Mac11"/> 
+
+</bean>
+ -->
+ 
+ 
+ 
+ 
+ <!-- this is for fortune app -->
+<bean name="fortune" class="org.example.app.model.CricketCoach">
+	<property name="fortuneService" ref="myFortuneService"/>
+	</bean>
+	<bean name="myFortuneService"
+		class="org.example.app.model.SadFortuneService">
+	
+	
+	
+	
+	</bean>	
+	
+</beans>
+
+
